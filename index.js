@@ -4,8 +4,10 @@ import OpenAI from "openai";
 import 'dotenv/config';
 import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
+import cors from 'cors';
 
 const app = express()
+app.use(cors())
 const openai = new OpenAI();
 
 async function texttospeech(input = "Hello, world!", voice = "alloy") {
